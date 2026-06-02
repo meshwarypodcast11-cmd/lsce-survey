@@ -334,13 +334,15 @@
     <div class="error-msg">⚠️ يرجى الإجابة على جميع الأسئلة في هذا الجدول</div>
   </div>
 
-  <div class="question-block" id="qblock-QC3">
-    <div class="question-label"><span class="qnum">QC3</span> إذا كنت تستخدم الأدوات الرقمية، إلى أي مدى توافق؟ <span class="optional-tag">(اختياري – تخطَّ إذا لم تستخدم أدوات رقمية)</span></div>
+   <div class="question-block" id="qblock-QC3">
+    <div class="question-label"><span class="qnum">QC3</span> إذا كنت تستخدم الأدوات الرقمية، إلى أي مدى توافق؟ <span class="req">*</span></div>
+                                    <!--<div class="question-label"><span class="qnum">QC3</span> إذا كنت تستخدم الأدوات الرقمية، إلى أي مدى توافق؟ <span class="optional-tag">(اختياري – تخطَّ إذا لم تستخدم أدوات رقمية)</span></div>-->
     <div class="table-scroll">
     <table class="matrix-table">
       <thead><tr><th style="min-width:220px;">العبارة</th><th>أعارض بشدة</th><th>لا أوافق</th><th>أتفق</th><th>أتفق بشدة</th></tr></thead>
       <tbody id="QC3-rows"></tbody>
     </table></div>
+    <div class="error-msg">⚠️ يرجى الإجابة على جميع الأسئلة في هذا الجدول</div>
   </div>
 
   <div class="question-block">
@@ -406,7 +408,8 @@
   </div>
 
   <div class="question-block" id="qblock-QD5">
-    <div class="question-label"><span class="qnum">QD5</span> هل ساعدك البرنامج على فهم كيفية حماية نفسك من المواقف الضارة؟ <span class="optional-tag">(اختياري)</span></div>
+    <div class="question-label"><span class="qnum">QD5</span> هل ساعدك البرنامج على فهم كيفية حماية نفسك من المواقف الضارة؟ <span class="req">*</span></div>
+   <!-- <div class="question-label"><span class="qnum">QD5</span> هل ساعدك البرنامج على فهم كيفية حماية نفسك من المواقف الضارة؟ <span class="optional-tag">(اختياري)</span></div>-->
     <div class="options-list">
       <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="QD5_الحماية" value="نعم، جداً"><label>نعم، جداً</label></label>
       <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="QD5_الحماية" value="نعم، قليلاً"><label>نعم، قليلاً</label></label>
@@ -414,11 +417,11 @@
       <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="QD5_الحماية" value="لم يتم تغطيته في البرنامج"><label>لم يتم تغطية هذا في البرنامج</label></label>
       <label class="option-item" onclick="selectRadio(this)"><input type="radio" name="QD5_الحماية" value="أفضل عدم الإجابة"><label>أفضل عدم الإجابة</label></label>
     </div>
+<div class="error-msg">⚠️ هذا الحقل مطلوب</div>
   </div>
-
   <div class="question-block">
     <div class="nav-buttons">
-      <button class="btn btn-secondary" onclick="prevSection('d')">→ السابق</button>
+  <button class="btn btn-secondary" onclick="prevSection('d')">→ السابق</button>
       <button class="btn btn-primary" onclick="nextSection('d')">التالي ←</button>
     </div>
   </div>
@@ -668,14 +671,14 @@ function validateSection(sec) {
   if(sec==='c') {
     check('qblock-QC1','QC1','matrix');
     check('qblock-QC2','QC2','matrix');
-    // QC3 is optional
+    check('qblock-QC3','QC3','matrix');
   }
-  if(sec==='d') {
+ if(sec==='d') {
     check('qblock-QD1','QD1','matrix');
     check('qblock-QD2','QD2_البقاء_في_المدرسة','radio');
     check('qblock-QD3','QD3_الإجراءات_المهنية','checkbox');
     check('qblock-QD4','QD4_الاستعداد_لسوق_العمل','radio');
-    // QD5 optional
+    check('qblock-QD5','QD5_الحماية','radio');
   }
   if(sec==='e') {
     check('qblock-QE1','QE1','matrix');
